@@ -1,4 +1,4 @@
-
+document.addEventListener('DOMContentLoaded', function () {
   function showSection(id) {
     document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
     document.querySelectorAll('.nav-link[data-section]').forEach(a => a.classList.remove('active'));
@@ -169,3 +169,5 @@
 
   document.getElementById('glossSearch').addEventListener('input', e => renderGlossary(e.target.value));
   renderGlossary();
+
+});
