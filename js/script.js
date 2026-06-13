@@ -7,18 +7,16 @@ document.addEventListener('DOMContentLoaded', function () {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  document.querySelectorAll('.nav-link[data-section]').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      showSection(link.dataset.section);
-      
-      const nav = document.getElementById('mainNav');
-      if (nav.classList.contains('show')) {
-        bootstrap.Collapse.getInstance(nav)?.hide();
-      }
-    });
+document.querySelectorAll('[data-section]').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    showSection(link.dataset.section);
+    const nav = document.getElementById('mainNav');
+    if (nav.classList.contains('show')) {
+      bootstrap.Collapse.getInstance(nav)?.hide();
+    }
   });
-
+});
   
   document.addEventListener('click', e => {
     if (!e.target.classList.contains('lang-tab')) return;
